@@ -111,7 +111,7 @@ class AssetDao {
     final db = await _dbHelper.database;
     
     String whereClause = '1=1';
-    List<dynamic> whereArgs = [];
+    List<Object?> whereArgs = [];
 
     if (categoryId != null) {
       whereClause += ' AND category_id = ?';

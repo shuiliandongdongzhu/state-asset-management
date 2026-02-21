@@ -155,8 +155,9 @@ class _AssetListScreenState extends State<AssetListScreen> {
               child: Row(
                 children: [
                   if (_selectedCategory != null)
-                    Chip(
+                    InputChip(
                       label: Text('分类: $_selectedCategory'),
+                      deleteIcon: const Icon(Icons.close, size: 18),
                       onDeleted: () {
                         setState(() {
                           _selectedCategory = null;
@@ -166,8 +167,9 @@ class _AssetListScreenState extends State<AssetListScreen> {
                     ),
                   const SizedBox(width: 8),
                   if (_selectedStatus != null)
-                    Chip(
+                    InputChip(
                       label: Text('状态: ${_getStatusText(_selectedStatus!)}'),
+                      deleteIcon: const Icon(Icons.close, size: 18),
                       onDeleted: () {
                         setState(() {
                           _selectedStatus = null;
