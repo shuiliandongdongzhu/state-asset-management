@@ -1,0 +1,22 @@
+# This is a generated file; do not edit or check into version control.
+.dart_tool/
+.packages
+build/
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/ServiceDefinitions.json
+android/.gradle/
+android/app/debug
+android/app/profile
+android/app/release
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
