@@ -1,38 +1,45 @@
-plugins {
-    id "com.android.application"
-    id "kotlin-android"
-    id "dev.flutter.flutter-gradle-plugin"
-}
+def flutterRoot = System.getenv('FLUTTER_ROOT') ?: '/usr/local/flutter'
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    namespace = "com.example.state_asset_management"
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    namespace "com.example.state_asset_management"
+    compileSdkVersion flutter.compileSdkVersion
+    ndkVersion flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
     }
 
     defaultConfig {
-        applicationId = "com.example.state_asset_management"
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
+        applicationId "com.example.state_asset_management"
+        minSdkVersion flutter.minSdkVersion
+        targetSdkVersion flutter.targetSdkVersion
+        versionCode flutter.versionCode
+        versionName flutter.versionName
     }
 
     buildTypes {
         release {
-            signingConfig = signingConfigs.debug
+            signingConfig signingConfigs.debug
         }
     }
 }
 
 flutter {
-    source = "../.."
+    source '../..'
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
