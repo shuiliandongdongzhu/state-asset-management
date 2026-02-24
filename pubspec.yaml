@@ -11,13 +11,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_localizations:
-    sdk: flutter
 
-  # 核心依赖 - 最简版本
-  sqflite: ^2.3.0
-  path_provider: ^2.1.0
-  shared_preferences: ^2.2.0
+  # 仅保留最核心的依赖
+  sqflite: ^2.3.2
+  path_provider: ^2.1.1
   intl: ^0.18.1
 
 dev_dependencies:
